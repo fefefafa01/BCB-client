@@ -1,12 +1,19 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router';
 import HelloWorld from '@/components/HelloWorld.vue';
+import HomeView from '@/views/customer/HomeView.vue';
 
 const routes = [
   {
     meta: {},
     path: '/',
     name: '',
-    component: HelloWorld
+    component: HomeView
+  },
+  {
+    meta: {},
+    path: '/home',
+    name: 'BCB',
+    component: HomeView
   }
 ];
 
@@ -30,8 +37,8 @@ router.beforeEach((to, from, next) => {
     .slice()
     .reverse()
     .find((r) => r.meta && r.meta.title);
-  if (nearestWithTitle) document.title = nearestWithTitle.meta.title; 
-  next(); 
+  if (nearestWithTitle) document.title = nearestWithTitle.meta.title;
+  next();
 });
 
 export default router;

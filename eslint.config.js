@@ -8,7 +8,7 @@ export default [
     rules: {
       // override/add rules settings here, such as:
       semi: "error",
-      'vue/no-unused-vars': 'error'
+      'vue/no-unused-vars': 'error',
     }
   }
-]
+];
