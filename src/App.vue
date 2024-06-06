@@ -1,8 +1,13 @@
 <script setup>
+import { RouterView } from 'vue-router';
 import HelloWorld from './components/HelloWorld.vue';
 </script>
 
 <template>
+  <RouterView />
+</template>
+
+<!-- <template>
   <div>
     <a
       href="https://vitejs.dev" 
@@ -19,9 +24,9 @@ import HelloWorld from './components/HelloWorld.vue';
       target="_blank"
     >
       <img
-        src="./assets/vue.svg"
+        src="./assets/BCB.png"
         class="logo vue"
-        alt="Vue logo"
+        alt="BCB logo"
       >
     </a>
   </div>
@@ -41,4 +46,4 @@ import HelloWorld from './components/HelloWorld.vue';
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
-</style>
+</style> -->
