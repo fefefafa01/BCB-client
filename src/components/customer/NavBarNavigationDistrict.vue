@@ -1,19 +1,25 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import SvgIcon from '@jamescoyle/vue-icon';
-import { mdiMapMarker } from '@mdi/js';
+import { mdiMapMarker, mdiMagnify } from '@mdi/js';
 
 const district = ref(['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6']);
 const selectedDistrict = ref('');
 const districtTemp = ref(district.value);
 const isMenuVisible = ref(false);
-const path = ref(mdiMapMarker);
+const path = ref({ mdiMapMarker: mdiMapMarker, mdiMagnify: mdiMagnify });
+const menuRef = ref(null);
 
 onMounted(() => {
   const storedDistrict = localStorage.getItem('selectedDistrict');
   if (storedDistrict) {
     selectedDistrict.value = storedDistrict;
   }
+  document.addEventListener('onClick', handleClickOutside);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener('onClick', handleClickOutside);
 });
 
 const togglePlaceMenu = () => {
@@ -31,16 +37,27 @@ const updateName = (selectedLi) => {
   isMenuVisible.value = false;
   // Add redirect logic here if needed
 };
+
+const handleClickOutside = (event) => {
+  if (menuRef.value && !menuRef.value.contains(event.target)) {
+    isMenuVisible.value = false;
+  }
+};
 </script>
 
 <template>
-  <div>
+  <div class="text-white w-40 max-w-40">
     <div
       class="relative duration-[400ms] hover:text-customTextHover cursor-pointer flex items-center"
       @click="togglePlaceMenu"
     >
-      <svg-icon type="mdi" :path="path" class="" alt="Icon location" />
-      <div class="font-bold text-lg ml-2">
+      <svg-icon
+        type="mdi"
+        :path="path.mdiMapMarker"
+        class="w-[30px] h-[30px]"
+        alt="Icon location"
+      />
+      <div class="font-bold text-[21px] ml-2">
         <p>{{ selectedDistrict || 'Địa điểm' }}</p>
       </div>
     </div>
@@ -50,7 +67,12 @@ const updateName = (selectedLi) => {
       :class="isMenuVisible ? 'block' : 'hidden'"
     >
       <div class="relative flex mb-2">
-        <span class="uil--search-alt"></span>
+        <svg-icon
+          type="mdi"
+          :path="path.mdiMagnify"
+          class="m-[13px] absolute inline-block w-[1.5em] h-[1.5em]"
+          alt="Icon Search"
+        ></svg-icon>
         <input
           class="w-full h-12 text-lg pl-10 border rounded-md"
           type="text"
@@ -73,18 +95,6 @@ const updateName = (selectedLi) => {
 </template>
 
 <style>
-.uil--search-alt {
-  color: #999;
-  margin: 13px;
-  position: absolute;
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M21.07 16.83L19 14.71a3.08 3.08 0 0 0-3.4-.57l-.9-.9a7 7 0 1 0-1.41 1.41l.89.89a3 3 0 0 0 .53 3.46l2.12 2.12a3 3 0 0 0 4.24 0a3 3 0 0 0 0-4.29m-8.48-4.24a5 5 0 1 1 0-7.08a5 5 0 0 1 0 7.08m7.07 7.07a1 1 0 0 1-1.42 0l-2.12-2.12a1 1 0 0 1 0-1.42a1 1 0 0 1 1.42 0l2.12 2.12a1 1 0 0 1 0 1.42'/%3E%3C/svg%3E");
-}
-
 .options::-webkit-scrollbar {
   width: 7px;
 }
