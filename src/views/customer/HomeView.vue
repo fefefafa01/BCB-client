@@ -28,7 +28,7 @@ onMounted(async () => {
           <SplideSlide v-for="data in notifData" :key="data.notification_id">
             <img
               class="h-[500px] object-fill block w-full"
-              :src="`src/images/notification/${data.link_img}`"
+              :src="`/images/notification/${data.link_img}`"
               :alt="`Sample ${data.notification_id}`"
             />
           </SplideSlide>
