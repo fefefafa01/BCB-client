@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
 import NavBar from '@/components/customer/NavBar.vue';
+import FooterBar from '@/components/customer/FooterBar.vue';
 
 const backend = import.meta.env.VITE_SERVER;
 console.log(backend);
@@ -76,5 +77,6 @@ onMounted(async () => {
         </ul>
       </div>
     </div>
+    <FooterBar />
   </div>
 </template>
