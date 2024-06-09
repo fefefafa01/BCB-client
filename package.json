@@ -11,8 +11,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@mdi/js": "^7.4.47",
     "@jamescoyle/vue-icon": "^0.1.2",
+    "@mdi/js": "^7.4.47",
+    "@splidejs/vue-splide": "^0.6.12",
+    "axios": "^1.7.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.2"
   },
