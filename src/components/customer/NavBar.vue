@@ -5,7 +5,7 @@ import NavBarNavigation from '@/components/customer/NavBarNavigation.vue';
 
 <template>
   <div
-    class="fixed z-10 mt-[5px] shadow-md bg-[#0b0c10] rounded-[30px] h-[115px] w-full flex flex-row justify-evenly items-center"
+    class="fixed z-10 shadow-md bg-[#0b0c10] rounded-b-[30px] h-[115px] w-screen flex flex-row justify-evenly items-center"
   >
     <div type="button" @click="" class="relative flex items-center">
       <img
