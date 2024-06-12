@@ -18,8 +18,7 @@ const routes = [
   {
     meta: { title: 'Login' },
     path: '/login',
-    // component: () => import('@/views/customer/LoginView.vue')
-    component: LoginView
+    component: () => import('@/views/customer/LoginView.vue')
   },
   {
     meta: { title: 'Forget Password' },
