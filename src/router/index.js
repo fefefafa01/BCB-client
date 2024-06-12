@@ -4,7 +4,6 @@ import HomeView from '@/views/customer/HomeView.vue';
 
 const routes = [
   {
-    meta: {},
     path: '/',
     name: '',
     component: HomeView
@@ -14,6 +13,16 @@ const routes = [
     path: '/home',
     name: 'BCB',
     component: HomeView
+  },
+  {
+    meta: { title: 'Login' },
+    path: '/login',
+    component: () => import('@/views/customer/LoginView.vue')
+  },
+  {
+    meta: { title: 'Forget Password' },
+    path: '/forgetPwd',
+    component: () => import('@/views/customer/ForgetPwdView.vue')
   }
 ];
 

@@ -23,27 +23,27 @@ const redirectToAboutUs = () => {
           <img src="/BCB.png" alt="this is logo" height="150" width="150" />
         </div>
         <div class="">
-          <h5 class="uppercase mb-4 font-bold text-[20px] cursor-pointer hover:text-[#45a29e]">
+          <h5 class="uppercase mb-4 font-bold text-[20px] cursor-pointer hover:text-customBgHover">
             HỖ TRỢ KHÁCH HÀNG
           </h5>
-          <p class="cursor-pointer text-[18px] hover:text-[#45a29e]">Hướng dẫn sử dụng</p>
-          <p class="cursor-pointer text-[18px] hover:text-[#45a29e]">
+          <p class="cursor-pointer text-[18px] hover:text-customBgHover">Hướng dẫn sử dụng</p>
+          <p class="cursor-pointer text-[18px] hover:text-customBgHover">
             Chính sách bảo mật thông tin
           </p>
         </div>
         <div class="">
           <h5
-            class="mb-4 font-bold pe-auto cursor-pointer text-[18px] text-[20px] hover:text-[#45a29e]"
+            class="mb-4 font-bold pe-auto cursor-pointer text-[18px] text-[20px] hover:text-customBgHover"
             @click="redirectToAboutUs"
           >
             VỀ CHÚNG TÔI
           </h5>
-          <p class="cursor-pointer text-[18px] hover:text-[#45a29e]">Sản phẩm</p>
-          <p class="cursor-pointer text-[18px] hover:text-[#45a29e]">Tin tức</p>
-          <p class="cursor-pointer text-[18px] hover:text-[#45a29e]">Hợp tác</p>
+          <p class="cursor-pointer text-[18px] hover:text-customBgHover">Sản phẩm</p>
+          <p class="cursor-pointer text-[18px] hover:text-customBgHover">Tin tức</p>
+          <p class="cursor-pointer text-[18px] hover:text-customBgHover">Hợp tác</p>
         </div>
         <div class="">
-          <h5 class="uppercase mb-4 font-bold text-[20px] hover:text-[#45a29e]">LIÊN HỆ</h5>
+          <h5 class="uppercase mb-4 font-bold text-[20px] hover:text-customBgHover">LIÊN HỆ</h5>
           <div class="flex">
             <svg-icon
               type="mdi"
@@ -78,7 +78,7 @@ const redirectToAboutUs = () => {
       <hr class="mb-4" />
       <div class="content-center">
         <div class="">
-          <p class="text-[#45a29e]">
+          <p class="text-customBgHover">
             Copyright &copy; 2023 All Rights Reserved. <strong>BADMINTON COURT BOOKING</strong>
           </p>
         </div>
@@ -86,18 +86,16 @@ const redirectToAboutUs = () => {
           <div class="text-center text-md-right">
             <ul class="list-unstyled list-inline">
               <li class="list-inline-item">
-                <a href="#"><i class="fab fa-facebook text-black" style="font-size: 23px"></i></a>
+                <a href="#"><i class="fab fa-facebook text-black" style="font-size: 23px" /></a>
               </li>
               <li class="list-inline-item">
-                <a href="#"><i class="fab fa-twitter text-black" style="font-size: 23px"></i></a>
+                <a href="#"><i class="fab fa-twitter text-black" style="font-size: 23px" /></a>
               </li>
               <li class="list-inline-item">
-                <a href="#"><i class="fab fa-youtube text-black" style="font-size: 23px"></i></a>
+                <a href="#"><i class="fab fa-youtube text-black" style="font-size: 23px" /></a>
               </li>
               <li class="list-inline-item">
-                <a href="#"
-                  ><i class="fab fa-linkedin-in text-black" style="font-size: 23px"></i
-                ></a>
+                <a href="#"><i class="fab fa-linkedin-in text-black" style="font-size: 23px" /></a>
               </li>
             </ul>
           </div>

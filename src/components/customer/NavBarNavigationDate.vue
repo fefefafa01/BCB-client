@@ -10,8 +10,8 @@ const path = ref({ mdiCalendarMultiselectOutline: mdiCalendarMultiselectOutline 
   <div>
     <div
       class="relative duration-[400ms] hover:text-customTextHover cursor-pointer flex items-center"
-      @click="togglePlaceMenu"
       type="button"
+      @click="togglePlaceMenu"
     >
       <svg-icon
         type="mdi"

@@ -10,8 +10,8 @@ const path = ref({ mdiCurrencyJpy: mdiCurrencyJpy });
   <div>
     <div
       class="relative duration-[400ms] hover:text-customTextHover cursor-pointer flex items-center"
-      @click="togglePlaceMenu"
       type="button"
+      @click="togglePlaceMenu"
     >
       <svg-icon
         type="mdi"

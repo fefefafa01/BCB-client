@@ -46,7 +46,7 @@ const handleClickOutside = (event) => {
 </script>
 
 <template>
-  <div class="text-white w-40 max-w-40">
+  <div class="text-white w-auto max-w-40 relative">
     <div
       class="relative duration-[400ms] hover:text-customTextHover cursor-pointer flex items-center"
       @click="togglePlaceMenu"
@@ -63,7 +63,7 @@ const handleClickOutside = (event) => {
     </div>
 
     <div
-      class="absolute p-5 rounded-lg bg-white text-[#0b0c10] shadow-lg"
+      class="absolute z-50 p-5 rounded-lg bg-white text-[#0b0c10] shadow-lg"
       :class="isMenuVisible ? 'block' : 'hidden'"
     >
       <div class="relative flex mb-2">
@@ -72,7 +72,7 @@ const handleClickOutside = (event) => {
           :path="path.mdiMagnify"
           class="m-[13px] absolute inline-block w-[1.5em] h-[1.5em]"
           alt="Icon Search"
-        ></svg-icon>
+        />
         <input
           class="w-full h-12 text-lg pl-10 border rounded-md"
           type="text"
