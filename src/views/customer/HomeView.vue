@@ -36,19 +36,14 @@ onMounted(async () => {
   <NavBar />
   <div class="w-screen h-auto mt-28 pt-12 pb-5">
     <div class="h-[500px]">
-      <Splide
-        :options="{ rewind: true }"
-        aria-label="My Favorite Images"
-      >
-        <SplideSlide
-          v-for="data in notifData"
-          :key="data.notification_id"
-        >
+      <Splide :options="{ rewind: true }" aria-label="My Favorite Images">
+        <SplideSlide v-for="data in notifData" :key="data.notification_id">
           <img
             class="h-[500px] object-fill block w-screen"
             :src="`/images/notifications/${data.link_img}`"
             :alt="`Sample ${data.notification_id}`"
-          >
+            loading="lazy"
+          />
         </SplideSlide>
       </Splide>
     </div>
@@ -61,11 +56,7 @@ onMounted(async () => {
         :key="index"
         class="flex items-center flex-nowrap flex-row justify-around pl-0"
       >
-        <div
-          v-for="id in group"
-          :key="id.news_id"
-          class="relative h-[320px] w-[260px] text-center"
-        >
+        <div v-for="id in group" :key="id.news_id" class="relative h-[320px] w-[260px] text-center">
           <div class="flex h-[80%] w-full flex-col-reverse flex-nowrap items-center">
             <div
               class="flex flex-col-reverse flex-nowrap justify-start bg-[#e2e2e2] h-[80%] w-full text-black text-[1.2rem] relative z-0"
@@ -76,7 +67,8 @@ onMounted(async () => {
               :src="`/images/news/${id.link_img}`"
               :alt="`Sample ${id.bantin_id}`"
               class="scale-[0.9] absolute z-[1] top-0"
-            >
+              loading="lazy"
+            />
           </div>
         </div>
       </ul>
