@@ -24,6 +24,11 @@ const routes = [
     meta: { title: 'Forget Password' },
     path: '/forgetPwd',
     component: () => import('@/views/customer/ForgetPwdView.vue')
+  },
+  {
+    meta: { title: 'Register' },
+    path: '/register',
+    component: () => import('@/views/customer/RegisterView.vue')
   }
 ];
 

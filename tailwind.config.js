@@ -42,6 +42,9 @@ export default {
       colors: {
         customBgHover: '#45a29e',
         customTextHover: 'mistyrose'
+      },
+      zIndex: {
+        100: '100'
       }
     }
   },

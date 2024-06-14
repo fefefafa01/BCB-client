@@ -46,7 +46,7 @@ const handleClickOutside = (event) => {
 </script>
 
 <template>
-  <div class="text-white w-auto max-w-40 relative">
+  <div class="text-white w-auto max-w-40">
     <div
       class="relative duration-[400ms] hover:text-customTextHover cursor-pointer flex items-center"
       @click="togglePlaceMenu"

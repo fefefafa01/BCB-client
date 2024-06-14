@@ -21,7 +21,7 @@ const redirectToLogin = () => {
 
 <template>
   <div
-    class="fixed z-10 shadow-md bg-[#0b0c10] rounded-b-[30px] h-[115px] w-screen flex flex-row justify-evenly items-center"
+    class="fixed z-100 shadow-md bg-[#0b0c10] rounded-b-[30px] h-[115px] w-screen flex flex-row justify-evenly items-center"
   >
     <div type="button" class="relative flex items-center" @click="redirectToHome">
       <img

@@ -13,6 +13,17 @@ const profileForm = reactive({
   email: '',
   password: ''
 });
+
+const login = async () => {
+  //check login info
+  //login true -> go to home page
+  window.location.assign('/home');
+  //login true && role = admin -> go to dashboard page
+};
+
+const redirectToRegister = () => {
+  window.location.assign('/register');
+};
 </script>
 
 <template>
@@ -23,7 +34,7 @@ const profileForm = reactive({
         <h2 class="text-customBgHover text-[1.5em]">CHÀO MỪNG ĐẾN VỚI BCB</h2>
         <h2 class="text-customBgHover text-[1.5em]">ĐĂNG NHẬP NGAY!</h2>
         <form action="" class="w-1/2">
-          <CardBox is-form @submit.prevent="">
+          <CardBox is-form @submit.prevent="login">
             <FormField label="Email" help="Required. Your Email">
               <FormControl
                 v-model="profileForm.email"
@@ -55,6 +66,8 @@ const profileForm = reactive({
             </template>
           </CardBox>
         </form>
+        <span>BẠN CHƯA CÓ TÀI KHOẢN?</span>
+        <a @click="redirectToRegister" class="text-customBgHover cursor-pointer">ĐĂNG KÝ</a>
       </div>
     </div>
   </div>
