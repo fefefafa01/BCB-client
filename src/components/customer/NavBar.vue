@@ -78,7 +78,7 @@ onMounted(() => {
         type="button"
         class="relative w-fit h-fit"
         div-class-name="flex justify-center items-center text-white text-[22px] font-bold w-32 h-12 duration-500 rounded-2xl hover:bg-customBgHover hover:text-customTextHover cursor-pointer"
-        text="Cá nhân"
+        text="Cánhân"
         has-div
         :has-profile="isSubMenuOpen ? true : false"
         @click="toggleMenu"
