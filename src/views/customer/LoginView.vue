@@ -1,6 +1,7 @@
 <script setup>
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 import { mdiAccount, mdiMail, mdiAsterisk, mdiFormTextboxPassword, mdiGithub } from '@mdi/js';
+import axios from 'axios';
 
 import NavBar from '@/components/customer/NavBar.vue';
 import FooterBar from '@/components/customer/FooterBar.vue';
@@ -9,16 +10,48 @@ import CardBox from '@/components/customer/CardBox.vue';
 import FormControl from '@/components/customer/FormControl.vue';
 import BaseButton from '../../components/customer/BaseButton.vue';
 
+const backend = import.meta.env.VITE_SERVER;
+
 const profileForm = reactive({
   email: '',
   password: ''
 });
+const status = ref('');
+const loggedIn = ref(false);
 
 const login = async () => {
-  //check login info
-  //login true -> go to home page
-  window.location.assign('/home');
-  //login true && role = admin -> go to dashboard page
+  try {
+    const response = await axios.post(backend + 'auth/login', {
+      email: profileForm.email,
+      password: profileForm.password
+    });
+    console.log(response.data);
+    if (response.data.loggedIn) {
+      localStorage.setItem(
+        'user',
+        JSON.stringify({
+          loggedIn: true,
+          role: 'customer',
+          user_name: response.data.name,
+          user_email: response.data.email,
+          user_id: response.data.customerId
+        })
+      );
+      status.value = response.data.status;
+      console.log(status.value);
+      if (localStorage.getItem('booking')) {
+        localStorage.removeItem('booking');
+        window.history.go(-1);
+      }
+      window.location.assign('/home');
+    } else {
+      loggedIn.value = false;
+      status.value = response.data.status;
+    }
+  } catch (error) {
+    // Handle error
+    console.error(error);
+  }
 };
 
 const redirectToRegister = () => {

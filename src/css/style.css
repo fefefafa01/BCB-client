@@ -91,3 +91,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@layer components {
+  .max-h-0 {
+    max-height: 0;
+  }
+  .max-h-400 {
+    max-height: 400px;
+  }
+  .transition-max-height {
+    transition: max-height 0.5s;
+  }
+}

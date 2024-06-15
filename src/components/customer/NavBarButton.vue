@@ -10,6 +10,9 @@ defineProps({
   },
   hasDiv: {
     type: Boolean
+  },
+  hasProfile: {
+    type: Boolean
   }
 });
 </script>

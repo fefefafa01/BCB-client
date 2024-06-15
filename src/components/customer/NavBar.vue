@@ -1,6 +1,24 @@
 <script setup>
+import { ref, onMounted } from 'vue';
+
 import NavBarButton from '@/components/customer/NavBarButton.vue';
 import NavBarNavigation from '@/components/customer/NavBarNavigation.vue';
+
+const isLoggedIn = ref(false);
+const isSubMenuOpen = ref(false);
+const user = JSON.parse(localStorage.getItem('user'));
+
+const checkLoginStatus = () => {
+  if (user.loggedIn) {
+    isLoggedIn.value = user.loggedIn === true;
+  } else {
+    isLoggedIn.value = false;
+  }
+};
+
+const toggleMenu = () => {
+  isSubMenuOpen.value = !isSubMenuOpen.value;
+};
 
 const redirectToHome = () => {
   const curPath = window.location.hash;
@@ -17,6 +35,10 @@ const redirectToLogin = () => {
     window.location.assign('/login');
   }
 };
+
+onMounted(() => {
+  checkLoginStatus();
+});
 </script>
 
 <template>
@@ -51,7 +73,32 @@ const redirectToLogin = () => {
       has-div
       @click=""
     />
+    <div v-if="isLoggedIn">
+      <NavBarButton
+        type="button"
+        class="relative w-fit h-fit"
+        div-class-name="flex justify-center items-center text-white text-[22px] font-bold w-32 h-12 duration-500 rounded-2xl hover:bg-customBgHover hover:text-customTextHover cursor-pointer"
+        text="Cá nhân"
+        has-div
+        :has-profile="isSubMenuOpen ? true : false"
+        @click="toggleMenu"
+      />
+      <div
+        :class="[
+          'absolute top-full right-0 w-[300px] float-left overflow-hidden transition-max-height',
+          { 'max-h-400': isSubMenuOpen, 'max-h-0': !isSubMenuOpen }
+        ]"
+      >
+        <div class="bg-customBgHover pl-5 pr-5 py-5 ml-[10px] mr-0 my-[10px] rounded-lg">
+          <div class="flex items-center">
+            <h3>{{ user.user_name }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <NavBarButton
+      v-else
       type="button"
       class="relative w-fit h-fit"
       div-class-name="flex justify-center items-center text-white text-[22px] font-bold w-32 h-12 duration-500 rounded-2xl hover:bg-customBgHover hover:text-customTextHover cursor-pointer"

@@ -1,6 +1,7 @@
 <script setup>
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 import { mdiAccount, mdiMail, mdiAsterisk, mdiFormTextboxPassword } from '@mdi/js';
+import axios from 'axios';
 
 import NavBar from '@/components/customer/NavBar.vue';
 import FooterBar from '@/components/customer/FooterBar.vue';
@@ -9,17 +10,35 @@ import CardBox from '@/components/customer/CardBox.vue';
 import FormControl from '@/components/customer/FormControl.vue';
 import BaseButton from '../../components/customer/BaseButton.vue';
 
+const backend = import.meta.env.VITE_SERVER;
+
 const profileForm = reactive({
   name: '',
   email: '',
   password: '',
   confirmPasswords: ''
 });
+const status = ref('');
 
 const register = async () => {
-  //check login info
-  //register true -> go to login page
-  window.location.assign('/login');
+  //check register info
+  if (profileForm.password !== profileForm.confirmPasswords) {
+    status.value = 'Mật khẩu không trùng khớp';
+  } else {
+    try {
+      const response = await axios.post(backend + 'auth/register', {
+        name: profileForm.name,
+        email: profileForm.email,
+        password: profileForm.password
+      });
+      if (response.data.registered) {
+        alert('Đăng ký thành công');
+        window.location.assign('login');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
 };
 
 const redirectToLogin = () => {
