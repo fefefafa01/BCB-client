@@ -29,7 +29,17 @@ const routes = [
     meta: { title: 'Register' },
     path: '/register',
     component: () => import('@/views/customer/RegisterView.vue')
+  },
+  {
+    meta: { title: 'Profile' },
+    path: '/profile',
+    component: () => import('@/views/customer/ProfileView.vue')
   }
+  // {
+  //   meta: { title: 'Booking History' },
+  //   path: '/history',
+  //   component: () => import('@/views/customer/HistoryView.vue')
+  // }
 ];
 
 const router = createRouter({
