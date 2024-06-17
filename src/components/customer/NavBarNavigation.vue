@@ -6,10 +6,10 @@ import NavigationPrice from '@/components/customer/NavBarNavigationPrice.vue';
 </script>
 
 <template>
-  <component>
+  <div>
     <NavigationDistrict />
     <NavigationDate />
     <NavigationTime />
     <NavigationPrice />
-  </component>
+  </div>
 </template>

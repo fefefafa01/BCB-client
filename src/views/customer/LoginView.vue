@@ -64,11 +64,24 @@ const redirectToRegister = () => {
   <div class="flex items-center justify-center mt-28">
     <div class="pt-24 pb-16 w-1/2">
       <div class="text-white flex items-center flex-col text-[15px]">
-        <h2 class="text-customBgHover text-[1.5em]">CHÀO MỪNG ĐẾN VỚI BCB</h2>
-        <h2 class="text-customBgHover text-[1.5em]">ĐĂNG NHẬP NGAY!</h2>
-        <form action="" class="w-1/2">
-          <CardBox is-form @submit.prevent="login">
-            <FormField label="Email" help="Required. Your Email">
+        <h2 class="text-customBgHover text-[1.5em]">
+          CHÀO MỪNG ĐẾN VỚI BCB
+        </h2>
+        <h2 class="text-customBgHover text-[1.5em]">
+          ĐĂNG NHẬP NGAY!
+        </h2>
+        <form
+          action=""
+          class="w-1/2"
+        >
+          <CardBox
+            is-form
+            @submit.prevent="login"
+          >
+            <FormField
+              label="Email"
+              help="Required. Your Email"
+            >
               <FormControl
                 v-model="profileForm.email"
                 :icon="mdiMail"
@@ -80,7 +93,11 @@ const redirectToRegister = () => {
                 transparent
               />
             </FormField>
-            <FormField label="Password" help="Required. Your password" forget-password>
+            <FormField
+              label="Password"
+              help="Required. Your password"
+              forget-password
+            >
               <FormControl
                 v-model="profileForm.password"
                 placeholder="Password"
@@ -94,13 +111,20 @@ const redirectToRegister = () => {
             </FormField>
             <template #footer>
               <BaseButtons>
-                <BaseButton color="info" type="submit" label="Đăng nhập" />
+                <BaseButton
+                  color="info"
+                  type="submit"
+                  label="Đăng nhập"
+                />
               </BaseButtons>
             </template>
           </CardBox>
         </form>
         <span>BẠN CHƯA CÓ TÀI KHOẢN?</span>
-        <a @click="redirectToRegister" class="text-customBgHover cursor-pointer">ĐĂNG KÝ</a>
+        <a
+          class="text-customBgHover cursor-pointer"
+          @click="redirectToRegister"
+        >ĐĂNG KÝ</a>
       </div>
     </div>
   </div>

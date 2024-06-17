@@ -78,7 +78,7 @@ const handleClickOutside = (event) => {
           type="text"
           placeholder="Tìm kiếm"
           @keyup="handleKeyUp"
-        />
+        >
       </div>
       <ul class="options max-h-[250px] overflow-y-auto">
         <li

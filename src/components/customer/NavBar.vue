@@ -70,12 +70,16 @@ onMounted(() => {
   <div
     class="fixed z-100 shadow-md bg-[#0b0c10] rounded-b-[30px] h-[115px] w-screen flex flex-row justify-between items-center"
   >
-    <div type="button" class="relative flex items-center" @click="redirectToHome">
+    <div
+      type="button"
+      class="relative flex items-center"
+      @click="redirectToHome"
+    >
       <img
         class="h-[100px] max-w-28 cursor-pointer"
         alt="Img"
         src="https://c.animaapp.com/UGutMkT8/img/da6c9e2e3c8f4d8abaf5e7e4c325ee24--1--1-1@2x.png"
-      />
+      >
     </div>
     <NavBarButton
       type="button"
@@ -122,29 +126,31 @@ onMounted(() => {
               class="w-[40px] rounded-[50%] mr-[15px]"
               alt="Icon Account"
             />
-            <h3 class="font-semibold">{{ user.user_name }}</h3>
+            <h3 class="font-semibold">
+              {{ user.user_name }}
+            </h3>
           </div>
-          <hr class="border-[0] h-[2px] w-full bg-[black] mx-[0] my-[10px]" />
+          <hr class="border-[0] h-[2px] w-full bg-[black] mx-[0] my-[10px]">
           <ProfileItem
             class="sub-menu-link flex items-center text-white my-3 hover: cursor-pointer"
-            @click="redirectToProfile"
             :path="path.mdiAccount"
             name="Trang cá nhân"
             has-span
+            @click="redirectToProfile"
           />
           <ProfileItem
             class="sub-menu-link flex items-center text-white my-3 hover: cursor-pointer"
-            @click="redirectToHistory"
             :path="path.mdiHistory"
             name="Lịch sử đặt sân"
             has-span
+            @click="redirectToHistory"
           />
           <ProfileItem
             class="sub-menu-link flex items-center text-white my-3 hover: cursor-pointer"
-            @click="logout"
             :path="path.mdiLogout"
             name="Logout"
             has-span
+            @click="logout"
           />
         </div>
       </div>

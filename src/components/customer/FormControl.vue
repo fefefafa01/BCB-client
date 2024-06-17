@@ -82,20 +82,24 @@ const inputEl = ref(null);
   <div class="relative">
     <select
       v-if="computedType === select"
-      :name="name"
       :id="id"
       v-model="computedValue"
+      :name="name"
       :class="inputElClass"
     >
-      <option v-for="option in options" :key="option.id ?? option" :value="option">
+      <option
+        v-for="option in options"
+        :key="option.id ?? option"
+        :value="option"
+      >
         {{ option.value ?? option }}
       </option>
     </select>
     <textarea
       v-else-if="computedType === 'textarea'"
-      :name="name"
       :id="id"
       v-model="computedValue"
+      :name="name"
       :class="inputElClass"
       :maxlength="maxlength"
       :placeholder="placeholder"
@@ -103,10 +107,10 @@ const inputEl = ref(null);
     />
     <input
       v-else
-      :type="computedType"
       :id="id"
       ref="inputEl"
       v-model="computedValue"
+      :type="computedType"
       :name="name"
       :maxLength="maxLength"
       :inputmode="inputmode"
@@ -114,7 +118,11 @@ const inputEl = ref(null);
       :require="require"
       :placeholder="placeholder"
       :class="inputElClass"
+    >
+    <FormControlIcon
+      v-if="icon"
+      :icon="icon"
+      :h="controlIconH"
     />
-    <FormControlIcon v-if="icon" :icon="icon" :h="controlIconH" />
   </div>
 </template>
