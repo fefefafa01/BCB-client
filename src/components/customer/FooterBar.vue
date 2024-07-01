@@ -19,23 +19,14 @@ const redirectToAboutUs = () => {
     <div class="text-left text-md">
       <div class="text-md-left flex justify-between">
         <div class="flex items-center flex-col">
-          <h5 class="uppercase font-bold text-[20px]">
-            Saigon Software
-          </h5>
-          <img
-            src="/BCB.png"
-            alt="this is logo"
-            height="150"
-            width="150"
-          >
+          <h5 class="uppercase font-bold text-[20px]">Saigon Software</h5>
+          <img src="/BCB.png" alt="this is logo" height="150" width="150" />
         </div>
         <div class="">
           <h5 class="uppercase mb-4 font-bold text-[20px] cursor-pointer hover:text-customBgHover">
             HỖ TRỢ KHÁCH HÀNG
           </h5>
-          <p class="cursor-pointer text-[18px] hover:text-customBgHover">
-            Hướng dẫn sử dụng
-          </p>
+          <p class="cursor-pointer text-[18px] hover:text-customBgHover">Hướng dẫn sử dụng</p>
           <p class="cursor-pointer text-[18px] hover:text-customBgHover">
             Chính sách bảo mật thông tin
           </p>
@@ -47,20 +38,12 @@ const redirectToAboutUs = () => {
           >
             VỀ CHÚNG TÔI
           </h5>
-          <p class="cursor-pointer text-[18px] hover:text-customBgHover">
-            Sản phẩm
-          </p>
-          <p class="cursor-pointer text-[18px] hover:text-customBgHover">
-            Tin tức
-          </p>
-          <p class="cursor-pointer text-[18px] hover:text-customBgHover">
-            Hợp tác
-          </p>
+          <p class="cursor-pointer text-[18px] hover:text-customBgHover">Sản phẩm</p>
+          <p class="cursor-pointer text-[18px] hover:text-customBgHover">Tin tức</p>
+          <p class="cursor-pointer text-[18px] hover:text-customBgHover">Hợp tác</p>
         </div>
         <div class="">
-          <h5 class="uppercase mb-4 font-bold text-[20px] hover:text-customBgHover">
-            LIÊN HỆ
-          </h5>
+          <h5 class="uppercase mb-4 font-bold text-[20px] hover:text-customBgHover">LIÊN HỆ</h5>
           <div class="flex">
             <svg-icon
               type="mdi"
@@ -79,9 +62,7 @@ const redirectToAboutUs = () => {
               class="w-[30px] h-[30px]"
               alt="Icon Cellphone"
             />
-            <p class="ml-3 text-[18px]">
-              02838328228
-            </p>
+            <p class="ml-3 text-[18px]">02838328228</p>
           </div>
           <div class="flex">
             <svg-icon
@@ -90,13 +71,11 @@ const redirectToAboutUs = () => {
               class="w-[30px] h-[30px]"
               alt="Icon Email"
             />
-            <p class="ml-3 text-[18px]">
-              dangkhoa0521@gmail.com
-            </p>
+            <p class="ml-3 text-[18px]">dangkhoa0521@gmail.com</p>
           </div>
         </div>
       </div>
-      <hr class="mb-4">
+      <hr class="mb-4" />
       <div class="content-center">
         <div class="">
           <p class="text-customBgHover">
@@ -107,28 +86,16 @@ const redirectToAboutUs = () => {
           <div class="text-center text-md-right">
             <ul class="list-unstyled list-inline">
               <li class="list-inline-item">
-                <a href="#"><i
-                  class="fab fa-facebook text-black"
-                  style="font-size: 23px"
-                /></a>
+                <a href="#"><i class="fab fa-facebook text-black" style="font-size: 23px" /></a>
               </li>
               <li class="list-inline-item">
-                <a href="#"><i
-                  class="fab fa-twitter text-black"
-                  style="font-size: 23px"
-                /></a>
+                <a href="#"><i class="fab fa-twitter text-black" style="font-size: 23px" /></a>
               </li>
               <li class="list-inline-item">
-                <a href="#"><i
-                  class="fab fa-youtube text-black"
-                  style="font-size: 23px"
-                /></a>
+                <a href="#"><i class="fab fa-youtube text-black" style="font-size: 23px" /></a>
               </li>
               <li class="list-inline-item">
-                <a href="#"><i
-                  class="fab fa-linkedin-in text-black"
-                  style="font-size: 23px"
-                /></a>
+                <a href="#"><i class="fab fa-linkedin-in text-black" style="font-size: 23px" /></a>
               </li>
             </ul>
           </div>

@@ -13,10 +13,12 @@ const user = JSON.parse(localStorage.getItem('user'));
 const path = ref({ mdiAccount: mdiAccount, mdiLogout: mdiLogout, mdiHistory: mdiHistory });
 
 const checkLoginStatus = () => {
-  if (user.loggedIn) {
-    isLoggedIn.value = user.loggedIn === true;
-  } else {
-    isLoggedIn.value = false;
+  if (user) {
+    if (user.loggedIn) {
+      isLoggedIn.value = user.loggedIn === true;
+    } else {
+      isLoggedIn.value = false;
+    }
   }
 };
 
@@ -70,16 +72,12 @@ onMounted(() => {
   <div
     class="fixed z-100 shadow-md bg-[#0b0c10] rounded-b-[30px] h-[115px] w-screen flex flex-row justify-between items-center"
   >
-    <div
-      type="button"
-      class="relative flex items-center"
-      @click="redirectToHome"
-    >
+    <div type="button" class="relative flex items-center" @click="redirectToHome">
       <img
         class="h-[100px] max-w-28 cursor-pointer"
         alt="Img"
         src="https://c.animaapp.com/UGutMkT8/img/da6c9e2e3c8f4d8abaf5e7e4c325ee24--1--1-1@2x.png"
-      >
+      />
     </div>
     <NavBarButton
       type="button"
@@ -91,7 +89,6 @@ onMounted(() => {
     />
     <NavBarNavigation
       class="bg-customBgHover relative rounded-[40px] h-24 w-[800px] flex items-center justify-evenly z-[3]"
-      @click=""
     />
 
     <NavBarButton
@@ -130,7 +127,7 @@ onMounted(() => {
               {{ user.user_name }}
             </h3>
           </div>
-          <hr class="border-[0] h-[2px] w-full bg-[black] mx-[0] my-[10px]">
+          <hr class="border-[0] h-[2px] w-full bg-[black] mx-[0] my-[10px]" />
           <ProfileItem
             class="sub-menu-link flex items-center text-white my-3 hover: cursor-pointer"
             :path="path.mdiAccount"

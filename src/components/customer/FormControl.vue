@@ -87,11 +87,7 @@ const inputEl = ref(null);
       :name="name"
       :class="inputElClass"
     >
-      <option
-        v-for="option in options"
-        :key="option.id ?? option"
-        :value="option"
-      >
+      <option v-for="option in options" :key="option.id ?? option" :value="option">
         {{ option.value ?? option }}
       </option>
     </select>
@@ -118,11 +114,7 @@ const inputEl = ref(null);
       :require="require"
       :placeholder="placeholder"
       :class="inputElClass"
-    >
-    <FormControlIcon
-      v-if="icon"
-      :icon="icon"
-      :h="controlIconH"
     />
+    <FormControlIcon v-if="icon" :icon="icon" :h="controlIconH" />
   </div>
 </template>

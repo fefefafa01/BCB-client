@@ -3,8 +3,6 @@ import { reactive, ref } from 'vue';
 import { mdiAccount, mdiMail, mdiAsterisk, mdiFormTextboxPassword } from '@mdi/js';
 import axios from 'axios';
 
-import NavBar from '@/components/customer/NavBar.vue';
-import FooterBar from '@/components/customer/FooterBar.vue';
 import FormField from '@/components/customer/FormField.vue';
 import CardBox from '@/components/customer/CardBox.vue';
 import FormControl from '@/components/customer/FormControl.vue';
@@ -47,8 +45,7 @@ const redirectToLogin = () => {
 </script>
 
 <template>
-  <NavBar />
-  <div class="flex items-center justify-center mt-28">
+  <div class="flex items-center justify-center">
     <div class="pt-24 pb-16 w-1/2">
       <div class="text-white flex items-center flex-col text-[15px]">
         <h2 class="text-customBgHover text-[1.5em]">CHÀO MỪNG ĐẾN VỚI BCB</h2>
@@ -123,5 +120,4 @@ const redirectToLogin = () => {
       </div>
     </div>
   </div>
-  <FooterBar />
 </template>

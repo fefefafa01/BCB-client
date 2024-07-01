@@ -16,7 +16,9 @@
     "@mdi/js": "^7.4.47",
     "@splidejs/vue-splide": "^0.6.12",
     "axios": "^1.7.2",
+    "flatpickr": "^4.6.13",
     "vue": "^3.4.21",
+    "vue-awesome-paginate": "^1.2.0",
     "vue-router": "^4.3.2"
   },
   "devDependencies": {

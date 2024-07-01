@@ -1,9 +1,12 @@
 <script setup>
+import { useRouter } from 'vue-router';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import SvgIcon from '@jamescoyle/vue-icon';
 import { mdiMapMarker, mdiMagnify } from '@mdi/js';
 
-const district = ref(['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6']);
+const router = useRouter();
+
+const district = ref(['Tất cả', 'Quận 1', 'Quận 2', 'Quận 3', 'Quận 4', 'Quận 5', 'Quận 6']);
 const selectedDistrict = ref('');
 const districtTemp = ref(district.value);
 const isMenuVisible = ref(false);
@@ -31,11 +34,17 @@ const handleKeyUp = (event) => {
   districtTemp.value = district.value.filter((data) => data.toLowerCase().includes(searchedVal));
 };
 
-const updateName = (selectedLi) => {
-  selectedDistrict.value = selectedLi;
-  localStorage.setItem('selectedDistrict', selectedLi);
+const updateName = (newSelectedDistrict) => {
+  selectedDistrict.value = newSelectedDistrict;
   isMenuVisible.value = false;
-  // Add redirect logic here if needed
+
+  const curPath = window.location.hash;
+  if (curPath === '#/courts') {
+    // Corrected the hash path
+    window.location.reload();
+  } else {
+    router.push({ path: '/courts', query: { value: newSelectedDistrict } });
+  }
 };
 
 const handleClickOutside = (event) => {
@@ -78,7 +87,7 @@ const handleClickOutside = (event) => {
           type="text"
           placeholder="Tìm kiếm"
           @keyup="handleKeyUp"
-        >
+        />
       </div>
       <ul class="options max-h-[250px] overflow-y-auto">
         <li

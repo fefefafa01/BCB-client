@@ -51,12 +51,7 @@ const logout = () => {
       class="flex flex-row flex-nowrap items-center bg-[#45a29e] w-80 h-20 rounded-[10px] p-[10px] cursor-pointer"
       @click="toggleMenu"
     >
-      <svg-icon
-        type="mdi"
-        :path="path.mdiAccount"
-        class="w-10 h-8"
-        alt="User Image"
-      />
+      <svg-icon type="mdi" :path="path.mdiAccount" class="w-10 h-8" alt="User Image" />
       <div
         class="text-[white] text-center text-[1.5em] w-full duration-[400ms] hover:text-customTextHover"
       >
@@ -75,28 +70,28 @@ const logout = () => {
           name="Thông tin chung"
           @click="redirectToProfile"
         />
-        <hr class="border-0 h-0.5 w-full bg-[#45a29e] mx-0 my-5">
+        <hr class="border-0 h-0.5 w-full bg-[#45a29e] mx-0 my-5" />
         <ProfileItem
           class="flex items-center no-underline text-[white]"
           :path="path.mdiHistory"
           name="Lịch sử đặt sân"
           @click="redirectToHistory"
         />
-        <hr class="border-0 h-0.5 w-full bg-[#45a29e] mx-0 my-5">
+        <hr class="border-0 h-0.5 w-full bg-[#45a29e] mx-0 my-5" />
         <ProfileItem
           class="flex items-center no-underline text-[white]"
           :path="path.mdiLockReset"
           name="Đổi mật khẩu"
           @click="redirectToResetPwd"
         />
-        <hr class="border-0 h-0.5 w-full bg-[#45a29e] mx-0 my-5">
+        <hr class="border-0 h-0.5 w-full bg-[#45a29e] mx-0 my-5" />
         <ProfileItem
           class="flex items-center no-underline text-[white]"
           :path="path.mdiLogout"
           name="Đăng xuất"
           @click="logout"
         />
-        <hr class="border-0 h-0.5 w-full bg-[#45a29e] mx-0 my-5">
+        <hr class="border-0 h-0.5 w-full bg-[#45a29e] mx-0 my-5" />
       </div>
     </div>
   </div>

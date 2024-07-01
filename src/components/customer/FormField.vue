@@ -46,21 +46,14 @@ const redirectToForgetPwd = () => {
 
 <template>
   <div class="mb-6 last:mb-0">
-    <label
-      v-if="label"
-      :for="labelFor"
-      class="block font-bold text-[1.25em] mb-2 text-left"
-    >{{
+    <label v-if="label" :for="labelFor" class="block font-bold text-[1.25em] mb-2 text-left">{{
       label
     }}</label>
     <div :class="wrapperClass">
       <slot />
     </div>
     <div class="flex justify-between">
-      <div
-        v-if="help"
-        class="text-xs text-gray-500 mt-1 text-left"
-      >
+      <div v-if="help" class="text-xs text-gray-500 mt-1 text-left">
         {{ help }}
       </div>
       <div

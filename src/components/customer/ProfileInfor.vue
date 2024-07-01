@@ -15,7 +15,9 @@ const props = defineProps({
       <div class="float-left w-24 text-left text-[18px] font-semibold">
         {{ detail.label }}
       </div>
-      <div class="table-cell text-[18px]">{{ detail.value }}</div>
+      <div class="table-cell text-[18px]">
+        {{ detail.value }}
+      </div>
     </div>
   </div>
 </template>

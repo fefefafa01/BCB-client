@@ -33,6 +33,6 @@ const props = defineProps({
     </a>
   </div>
   <hr class="mx-0 my-1.5" />
-  <ProfileInforGroups v-if="isContent" :userDetails="details" />
-  <ProfileHistory v-else-if="isHistory" :historyDetails="details" />
+  <ProfileInforGroups v-if="isContent" :user-details="details" />
+  <ProfileHistory v-else-if="isHistory" :history-details="details" />
 </template>
