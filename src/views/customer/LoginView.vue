@@ -40,8 +40,9 @@ const login = async () => {
       if (localStorage.getItem('booking')) {
         localStorage.removeItem('booking');
         window.history.go(-1);
+      } else {
+        window.location.assign('/home');
       }
-      window.location.assign('/home');
     } else {
       loggedIn.value = false;
       status.value = response.data.status;
@@ -90,9 +91,7 @@ const redirectToRegister = () => {
               />
             </FormField>
             <template #footer>
-              <BaseButtons>
-                <BaseButton color="info" type="submit" label="Đăng nhập" />
-              </BaseButtons>
+              <BaseButton color="info" type="submit" label="Đăng nhập" />
             </template>
           </CardBox>
         </form>

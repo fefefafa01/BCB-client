@@ -43,13 +43,13 @@ const routes = [
       {
         meta: { title: 'Courts' },
         path: '/courts',
-        component: () => import('@/views/customer/CourtsSite.vue'),
+        component: () => import('@/views/customer/CourtsView.vue'),
         props: (route) => ({ value: route.query.value })
       },
       {
         meta: { title: 'Court Booking' },
         path: '/courtBooking',
-        component: () => import('@/views/customer/CourtBookingSite.vue'),
+        component: () => import('@/views/customer/CourtBookingView.vue'),
         props: (route) => ({ value: route.query.value })
       }
     ]

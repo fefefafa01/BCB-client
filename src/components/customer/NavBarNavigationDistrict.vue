@@ -13,18 +13,6 @@ const isMenuVisible = ref(false);
 const path = ref({ mdiMapMarker: mdiMapMarker, mdiMagnify: mdiMagnify });
 const menuRef = ref(null);
 
-onMounted(() => {
-  const storedDistrict = localStorage.getItem('selectedDistrict');
-  if (storedDistrict) {
-    selectedDistrict.value = storedDistrict;
-  }
-  document.addEventListener('onClick', handleClickOutside);
-});
-
-onBeforeUnmount(() => {
-  document.removeEventListener('onClick', handleClickOutside);
-});
-
 const togglePlaceMenu = () => {
   isMenuVisible.value = !isMenuVisible.value;
 };
@@ -35,7 +23,7 @@ const handleKeyUp = (event) => {
 };
 
 const updateName = (newSelectedDistrict) => {
-  selectedDistrict.value = newSelectedDistrict;
+  localStorage.setItem('selectedDistrict', newSelectedDistrict);
   isMenuVisible.value = false;
 
   const curPath = window.location.hash;
@@ -52,6 +40,18 @@ const handleClickOutside = (event) => {
     isMenuVisible.value = false;
   }
 };
+
+onMounted(() => {
+  const storedDistrict = localStorage.getItem('selectedDistrict');
+  if (storedDistrict) {
+    selectedDistrict.value = storedDistrict;
+  }
+  document.addEventListener('onClick', handleClickOutside);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener('onClick', handleClickOutside);
+});
 </script>
 
 <template>

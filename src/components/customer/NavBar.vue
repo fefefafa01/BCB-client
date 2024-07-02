@@ -27,6 +27,8 @@ const toggleMenu = () => {
 };
 
 const redirectToHome = () => {
+  const items = ['selectedDistrict', 'date', 'yardDetail', 'paymentInfo'];
+  items.forEach((item) => localStorage.removeItem(item));
   const curPath = window.location.hash;
   if (curPath === '/') window.location.reload();
   else {

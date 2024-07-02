@@ -17,7 +17,7 @@ const place = ref([]);
 
 const listOfCourts = async () => {
   try {
-    const res = await axios.get(backend + 'listOfCourt', {
+    const res = await axios.get(backend + 'courts/courtsList', {
       params: {
         district: props.value
       }
